@@ -39,7 +39,6 @@ public class PilotServiceImpl implements PilotService {
 		for (Pilot p : pilots) {
 			responses.add(new PilotResponse(p));
 		}
-		// pilots.stream().map(p -> responses.add(new PilotResponse(p)));
 
 		return responses;
 	}
