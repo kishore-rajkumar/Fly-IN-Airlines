@@ -33,15 +33,19 @@ public class BootstrapPilotData implements CommandLineRunner {
 
 	private void initializePilotData() {
 
-		Pilot jan = new Pilot("Sandeep Kumar", "Sr. Pilot", "12");
+		Pilot jan = Pilot.builder().name("Sandeep Kumar").designation("Sr. Pilot").experience("12").build();
 		repository.save(jan);
-		Pilot feb = new Pilot("Alex James", "Sr. Pilot", "18");
+
+		Pilot feb = Pilot.builder().name("Alex James").designation("Sr. Pilot").experience("18").build();
 		repository.save(feb);
-		Pilot mar = new Pilot("Rajesh Mishra", "Sr. Pilot", "15");
+
+		Pilot mar = Pilot.builder().name("Rajesh Mishra").designation("Sr. Pilot").experience("15").build();
 		repository.save(mar);
-		Pilot apr = new Pilot("Uttam Yadav", "Pilot", "8");
+
+		Pilot apr = Pilot.builder().name("Uttam Yadav").designation("Pilot").experience("8").build();
 		repository.save(apr);
-		Pilot may = new Pilot("Monty Singh", "Pilot", "9");
+
+		Pilot may = Pilot.builder().name("Monty Singh").designation("Pilot").experience("9").build();
 		repository.save(may);
 
 	}
