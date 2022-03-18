@@ -11,10 +11,11 @@ import org.springframework.stereotype.Component;
 import com.kishore.airportpilotservice.entity.Pilot;
 import com.kishore.airportpilotservice.repository.PilotRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Component
 public class BootstrapPilotData implements CommandLineRunner {
-
-	private static final Logger logger = LoggerFactory.getLogger(BootstrapPilotData.class);
 
 	@Autowired
 	private PilotRepository repository;
@@ -22,10 +23,10 @@ public class BootstrapPilotData implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		logger.info("initializing pilot data ...");
+		log.info("initializing pilot data ...");
 		initializePilotData();
 
-		logger.info("pilot data initialized ...");
+		log.info("pilot data initialized ...");
 
 		loadPilotData();
 
@@ -53,7 +54,7 @@ public class BootstrapPilotData implements CommandLineRunner {
 	private void loadPilotData() {
 
 		List<Pilot> pilots = repository.findAll();
-		pilots.stream().forEach(p -> logger.info("Created -> " + p));
+		pilots.stream().forEach(p -> log.info("Created -> " + p));
 
 	}
 
