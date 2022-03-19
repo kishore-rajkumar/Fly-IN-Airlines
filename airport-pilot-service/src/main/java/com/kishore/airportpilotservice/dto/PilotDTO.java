@@ -1,19 +1,13 @@
-package com.kishore.airportpilotservice.response;
+package com.kishore.airportpilotservice.dto;
 
 import java.io.Serializable;
 
-import com.kishore.airportpilotservice.entity.Pilot;
-
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @Setter
 @Getter
-@ToString
-@NoArgsConstructor
-public class PilotResponse implements Serializable {
+public class PilotDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -21,12 +15,5 @@ public class PilotResponse implements Serializable {
 	private String name;
 	private String designation;
 	private String experience;
-
-	public PilotResponse(Pilot pilotEntity) {
-		this.id = pilotEntity.getId();
-		this.name = pilotEntity.getName();
-		this.designation = pilotEntity.getDesignation();
-		this.experience = pilotEntity.getExperience();
-	}
 
 }

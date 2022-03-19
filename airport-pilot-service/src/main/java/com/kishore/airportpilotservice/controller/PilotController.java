@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.kishore.airportpilotservice.response.PilotResponse;
+import com.kishore.airportpilotservice.dto.PilotDTO;
 import com.kishore.airportpilotservice.service.PilotService;
 
 @RestController
@@ -27,8 +27,8 @@ public class PilotController {
 	 * @return PilotResponse (id, name, designation, experience)
 	 */
 	@GetMapping("/api/v1/pilots/{id}")
-	public ResponseEntity<PilotResponse> getPilotById(@PathVariable Long id) {
-		PilotResponse pilotResponse = pilotService.getPilotById(id);
+	public ResponseEntity<PilotDTO> getPilotById(@PathVariable Long id) {
+		PilotDTO pilotResponse = pilotService.getPilotById(id);
 		return new ResponseEntity<>(pilotResponse, HttpStatus.OK);
 	}
 
@@ -38,8 +38,8 @@ public class PilotController {
 	 * @return List<PilotResponse (id, name, designation, experience)>
 	 */
 	@GetMapping("/api/v1/pilots")
-	public ResponseEntity<List<PilotResponse>> getAllPilots() {
-		List<PilotResponse> listPilotResponse = pilotService.getAllPilots();
+	public ResponseEntity<List<PilotDTO>> getAllPilots() {
+		List<PilotDTO> listPilotResponse = pilotService.getAllPilots();
 		return new ResponseEntity<>(listPilotResponse, HttpStatus.OK);
 	}
 	
@@ -52,8 +52,8 @@ public class PilotController {
 	 * @return List<PilotResponse (id, name, designation, experience)>
 	 */
 	@GetMapping("/api/v1/pilots/find-by-designation")
-	public ResponseEntity<List<PilotResponse>> findPilotsByDesignation(@RequestParam String designation) {
-		List<PilotResponse> listPilotResponse = pilotService.findPilotsByDesignation(designation);
+	public ResponseEntity<List<PilotDTO>> findPilotsByDesignation(@RequestParam String designation) {
+		List<PilotDTO> listPilotResponse = pilotService.findPilotsByDesignation(designation);
 		return new ResponseEntity<>(listPilotResponse, HttpStatus.FOUND);
 	}
 

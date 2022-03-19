@@ -2,14 +2,14 @@ package com.kishore.airportpilotservice.service;
 
 import java.util.List;
 
-import com.kishore.airportpilotservice.response.PilotResponse;
+import com.kishore.airportpilotservice.dto.PilotDTO;
 
 public interface PilotService {
 
-	PilotResponse getPilotById(Long id);
+	PilotDTO getPilotById(Long id);
 
-	List<PilotResponse> getAllPilots();
+	List<PilotDTO> getAllPilots();
 
-	List<PilotResponse> findPilotsByDesignation(String designation);
+	List<PilotDTO> findPilotsByDesignation(String designation);
 
 }
